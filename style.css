@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+body {
+    background: linear-gradient(135deg, #eff2ff 0%, #cdd3f5 100%);
+    overflow: hidden; /* ป้องกัน Scrollbar ถ้าภาพใหญ่เกิน */
+}
+
+/* --- Container หลัก (เรียง Header กับ เนื้อหา เป็นแนวตั้ง) --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100vh;          /* สูงเต็มจอ */
+    display: flex;
+    flex-direction: column; /* บนลงล่าง */
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    flex-shrink: 0; 
+}
+
+.logo { font-size: 24px; font-weight: bold; margin-right: auto; }
+.list { display: flex; list-style: none; gap: 30px; }
+.list li a { text-decoration: none; color: #333; font-size: 16px; transition: color 0.3s;}
+.list li a:hover { color: #667eea; }
+
+/* ปุ่ม Partner (Header) */
+.btn-partner {
+    margin-left: 40px;
+    text-decoration: none;
+    color: #0a2540;
+    border: 1px solid #0a2540;
+    border-radius: 50px;
+    padding: 10px 24px;
+    transition: all 0.3s;
+}
+.btn-partner:hover { background-color: #0a2540; color: white; }
+
+
+/* --- Wrapper เนื้อหาหลัก (เรียง ซ้าย-ขวา) --- */
+.content-wrapper {
+    display: flex;          /* เรียงแนวนอน */
+    align-items: center;    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: space-between; /* กระจายเนื้อหาซ้ายขวา */
+    flex-grow: 1;           /* ขยายเต็มพื้นที่ความสูงที่เหลือ */
+    width: 100%;
+}
+
+/* --- ฝั่งซ้าย (ข้อความ) --- */
+.mainleft {
+    flex: 1;                /* กินพื้นที่ 1 ส่วน (ประมาณครึ่งนึง) */
+    padding-right: 20px;    /* เว้นระยะห่างจากรูป */
+}
+
+.mainleft h1 {
+    font-size: 54px;
+    line-height: 1.1;
+    color: #0a2540;
+    font-weight: 800;
+}
+.mainleft p { font-size: 18px; color: #555; margin-top: 10px; }
+.mainleft p:first-of-type { margin-top: 20px; }
+
+
+/* --- ฝั่งขวา (รูปภาพ) --- */
+.imgright {
+    flex: 1;                /* กินพื้นที่ 1 ส่วนเท่ากับฝั่งซ้าย */
+    display: flex;
+    justify-content: flex-end; /* จัดรูปให้ชิดขวาสุด */
+}
+
+.imgright img {
+    max-width: 100%;        /* รูปห้ามกว้างเกินกรอบ */
+    height: auto;           /* สูงตามสัดส่วน */
+    width: 500px;           /* กำหนดขนาดสูงสุดที่ต้องการ */
+    border-radius: 20px;    /* มุมมน*/
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* เงาให้รูปลอย */
+    object-fit: cover;
+}
+
+/* --- ปุ่ม Contact Us (Space Theme) --- */
+.btn-contact {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 14px 35px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6);
+}
+
+footer{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+footer h1{
+    padding: 1px;
+    color: #0a2540;
+    font-weight: normal;
+}
